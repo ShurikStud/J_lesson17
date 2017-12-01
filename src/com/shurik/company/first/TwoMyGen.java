@@ -24,4 +24,11 @@ public class TwoMyGen <T, V> {
 
     }
 
+    public T getObject1() {
+        return object1;
+    }
+
+    public V getObject2() {
+        return object2;
+    }
 }
