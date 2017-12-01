@@ -4,6 +4,9 @@ import com.shurik.company.first.MyGen;
 import com.shurik.company.first.TwoMyGen;
 import com.shurik.company.fourth.Operation;
 import com.shurik.company.second.Bank;
+import com.shurik.company.seventh.impl.MyNewOperation2;
+import com.shurik.company.sixth.MyOperation;
+import com.shurik.company.third.IAccount;
 import com.shurik.company.third.MyBank;
 import com.shurik.company.third.impl.Account;
 
@@ -61,6 +64,7 @@ public class Main {
 
         accountMyBank.accountInfo();*/
 
+/*
 
         //=====================================
         //+++++++++++++++++++++++++++++++++++++
@@ -70,6 +74,46 @@ public class Main {
         Operation<Account, Integer> operation   = new Operation<>(account2, 100);
         operation.getInfo();
 
+        //=====================================
+        //=====================================
+
+        Account account3    = new Account(33);
+        Operation<Account, Integer> operation3  = new Operation<>(account3, 130);
+        setOperation(operation3);
+
+        Account account4    = new Account(44);
+        display(account4);
+*/
+
+
+        //=====================================
+        //+++++++++++++++++++++++++++++++++++++
+        //=====================================
+
+        MyOperation myOperation  = new MyOperation(12.6, 34.6 );
+        System.out.println(myOperation.getSum());
+
+        //=====================================
+        //+++++++++++++++++++++++++++++++++++++
+        //=====================================
+
+        MyNewOperation2 myNewOperation2 = new MyNewOperation2(new Account(44));
+
+        IAccount account5   = myNewOperation2.getAccount();
+
+        System.out.println(account5.getId());
 
     }
+
+    private static void setOperation(Operation<? extends IAccount, ?> op){
+
+        op.getInfo();
+
+    }
+
+    private static <T extends IAccount> void display(T acc){
+
+        System.out.println(acc.getId());
+    }
+
 }
