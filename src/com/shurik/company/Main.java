@@ -3,6 +3,8 @@ package com.shurik.company;
 import com.shurik.company.first.MyGen;
 import com.shurik.company.first.TwoMyGen;
 import com.shurik.company.second.Bank;
+import com.shurik.company.third.MyBank;
+import com.shurik.company.third.impl.Account;
 
 public class Main {
 
@@ -48,6 +50,15 @@ public class Main {
 
         System.out.println("integerBank = " + integerBank.toString());
         System.out.println("stringBank = " + stringBank.toString());
+
+        //=====================================
+        System.out.println("//=====================================");
+
+        Account[] accounts  = new Account[]{new Account(12), new Account(432), new Account(2323), new Account(1)};
+
+        MyBank<Account> accountMyBank   = new MyBank<>(accounts);
+
+        accountMyBank.accountInfo();
 
     }
 }
