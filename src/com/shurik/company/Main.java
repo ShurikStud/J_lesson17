@@ -2,6 +2,7 @@ package com.shurik.company;
 
 import com.shurik.company.first.MyGen;
 import com.shurik.company.first.TwoMyGen;
+import com.shurik.company.fourth.Operation;
 import com.shurik.company.second.Bank;
 import com.shurik.company.third.MyBank;
 import com.shurik.company.third.impl.Account;
@@ -45,7 +46,7 @@ public class Main {
         //+++++++++++++++++++++++++++++++++++++
         //=====================================
 
-        Bank<Integer> integerBank = new Bank<>(new Integer[] {1,2,3,4,5});
+        /*Bank<Integer> integerBank = new Bank<>(new Integer[] {1,2,3,4,5});
         Bank<String> stringBank = new Bank<>(new String[]{"123442", "fefwee", "fw3f3f3"});
 
         System.out.println("integerBank = " + integerBank.toString());
@@ -58,7 +59,17 @@ public class Main {
 
         MyBank<Account> accountMyBank   = new MyBank<>(accounts);
 
-        accountMyBank.accountInfo();
+        accountMyBank.accountInfo();*/
+
+
+        //=====================================
+        //+++++++++++++++++++++++++++++++++++++
+        //=====================================
+
+        Account account2    = new Account(21);
+        Operation<Account, Integer> operation   = new Operation<>(account2, 100);
+        operation.getInfo();
+
 
     }
 }
